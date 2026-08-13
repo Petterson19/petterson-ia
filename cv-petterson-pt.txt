@@ -1,0 +1,42 @@
+CV em português — conteúdo traduzido a partir do CV 2026 fornecido pelo usuário.
+
+Petterson Cavalheiro
+Especialista em Dados de IA | Analista de Dados | QA Linguístico
+
+Resumo profissional
+Especialista em Dados de IA com experiência em anotação de dados, reconhecimento de fala, transcrição de áudio, garantia de qualidade, alinhamento speech-to-text e avaliação de modelos de IA. Experiência em projetos de IA de larga escala sob NDA. Forte base analítica combinada com experiência em gestão comercial e product ownership.
+
+Experiência
+AI Language Specialist | RWS | Remoto | 2026 – Atual
+• Projetos confidenciais de linguagem para IA sob NDA.
+• Transcrição de áudio seguindo guidelines linguísticos detalhados.
+• Revisões de QA para precisão e consistência.
+• Alinhamento entre áudio e transcrições.
+• Validação de datasets usados no treinamento e avaliação de sistemas de reconhecimento de fala e IA.
+• Produtividade e qualidade dentro de prazos.
+
+Data Analyst | TELUS | Remoto | Mai 2021 – Atual
+• Análise de dados de IA, avaliação de buscas e qualidade de conteúdo.
+• Trabalho com guidelines detalhados para melhorar desempenho de modelos de IA.
+• Colaboração com equipes internacionais distribuídas.
+
+Analyst | Amazon | Remoto | Mai 2019 – Dez 2021
+• Análise de dados para operações relacionadas a IA.
+• Automação de workflows de relatórios usando Python.
+
+Intérprete de Libras | Freelancer | 2020 – Atual
+• Serviços de interpretação em eventos e ambientes de serviço público.
+
+Gerente / Consultor Comercial | 2010 – 2017
+• Operações comerciais, vendas B2B e desenvolvimento de propostas.
+• Propostas comerciais e análises de custos.
+
+Formação
+• Bacharelado em Libras — Instituto Federal do Tocantins (IFTO), 2026 – Atual.
+• Análise e Desenvolvimento de Sistemas, 2022 – Atual.
+
+Competências
+Anotação de Dados de IA • Transcrição de Áudio • QA Linguístico • Alinhamento Speech-to-Text • Avaliação de LLM • Avaliação de Prompts • Python • HTML • Análise de Dados • Product Ownership • Vendas B2B
+
+Idiomas
+Português (Nativo) • Inglês (Fluente) • Libras (Avançado) • Crioulo Haitiano (Intermediário) • Espanhol (Básico)
