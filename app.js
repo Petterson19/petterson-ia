@@ -1,7 +1,7 @@
 const translations = {
   pt:{
     "nav.about":"Sobre","nav.experience":"Experiência","nav.skills":"Skills","nav.projects":"Projetos","nav.contact":"Contato","private":"Área pessoal","labels.education":"FORMAÇÃO & IDIOMAS","education.title":"Formação","edu1.title":"Bacharelado em Libras","edu2.title":"Análise e Desenvolvimento de Sistemas","languages.title":"Idiomas",
-    "hero.status":"Disponível para novos projetos","hero.title":"Petterson Cavalheiro","hero.subtitle":"Profissional remoto com experiência em avaliação de conteúdo, qualidade de dados, transcrição e projetos relacionados a inteligência artificial e linguagem.","hero.contact":"Vamos conversar","hero.download":"Baixar CV",
+    "hero.status":"Disponível para novos projetos","hero.title":"Petterson Cavalheiro","hero.role":"AI Data Specialist · Data Analyst · Linguistic QA","private.title":"Área pessoal em breve","private.text":"A área privada está sendo preparada. O acesso a arquivos pessoais será liberado em uma próxima versão.","private.ok":"Entendi","hero.subtitle":"Especialista em dados de IA, análise de dados e QA linguístico, com experiência em anotação de dados, reconhecimento de fala, transcrição, alinhamento speech-to-text e avaliação de modelos de IA.","hero.contact":"Vamos conversar","hero.download":"Baixar CV",
     "about.title":"Tecnologia com foco em qualidade, precisão e aprendizado contínuo.","about.text":"Minha atuação combina trabalho remoto, análise de conteúdo, qualidade de dados, linguagem e ferramentas digitais. Tenho interesse especial por inteligência artificial, LLMs e pela construção de soluções simples que resolvem problemas reais.","about.fact1":"Projetos e avaliação","about.fact2":"Precisão e guidelines","about.fact3":"Experiência distribuída","about.fact4":"Web e automação",
     "experience.title":"Experiência profissional","experience.note":"Remote · Freelance · AI/Data","exp1.period":"ATUAL","exp1.title":"AI / Data / Content Quality","exp1.text":"Avaliação, QA, anotação e análise de conteúdo para projetos digitais e de inteligência artificial, seguindo guidelines e critérios de qualidade.","exp2.period":"PROJETOS","exp2.title":"Transcription & Language Data","exp2.text":"Transcrição, revisão, alinhamento entre áudio e texto e controle de qualidade de dados linguísticos em projetos remotos.","exp3.period":"FREELANCE","exp3.title":"Remote Project Operations","exp3.text":"Execução de projetos distribuídos com foco em produtividade, precisão, documentação e adaptação a diferentes ferramentas e processos.",
     "skills.title":"Ferramentas e competências","skills.ai":"Avaliação de outputs, qualidade de dados e fluxos com IA.","skills.qa":"Análise criteriosa, guidelines, consistência e revisão.","skills.web":"HTML, CSS, JavaScript, GitHub e aplicações web.","skills.data":"Anotação, transcrição, alinhamento e organização de dados.",
@@ -10,7 +10,7 @@ const translations = {
   },
   en:{
     "nav.about":"About","nav.experience":"Experience","nav.skills":"Skills","nav.projects":"Projects","nav.contact":"Contact","private":"Private area","labels.education":"EDUCATION & LANGUAGES","education.title":"Education","edu1.title":"Bachelor's Degree in Brazilian Sign Language (Libras)","edu2.title":"Systems Analysis and Development","languages.title":"Languages",
-    "hero.status":"Available for new projects","hero.title":"Petterson Cavalheiro","hero.subtitle":"Remote professional with experience in content evaluation, data quality, transcription and projects related to artificial intelligence and language.","hero.contact":"Let's talk","hero.download":"Download CV",
+    "hero.status":"Available for new projects","hero.title":"Petterson Cavalheiro","hero.role":"AI Data Specialist · Data Analyst · Linguistic QA","private.title":"Private area coming soon","private.text":"The private area is being prepared. Access to personal files will be available in a future version.","private.ok":"Got it","hero.subtitle":"AI Data Specialist, Data Analyst and Linguistic QA professional with experience in data annotation, speech recognition, transcription, speech-to-text alignment and AI model evaluation.","hero.contact":"Let's talk","hero.download":"Download CV",
     "about.title":"Technology with a focus on quality, precision and continuous learning.","about.text":"My work combines remote operations, content analysis, data quality, language and digital tools. I am especially interested in artificial intelligence, LLMs and building simple solutions for real-world problems.","about.fact1":"Projects & evaluation","about.fact2":"Accuracy & guidelines","about.fact3":"Distributed work","about.fact4":"Web & automation",
     "experience.title":"Professional experience","experience.note":"Remote · Freelance · AI/Data","exp1.period":"CURRENT","exp1.title":"AI / Data / Content Quality","exp1.text":"Evaluation, QA, annotation and content analysis for digital and artificial intelligence projects, following guidelines and quality criteria.","exp2.period":"PROJECTS","exp2.title":"Transcription & Language Data","exp2.text":"Transcription, review, audio-to-text alignment and language-data quality control in remote projects.","exp3.period":"FREELANCE","exp3.title":"Remote Project Operations","exp3.text":"Distributed project execution focused on productivity, accuracy, documentation and adapting to different tools and processes.",
     "skills.title":"Tools & skills","skills.ai":"Output evaluation, data quality and AI workflows.","skills.qa":"Detailed analysis, guidelines, consistency and review.","skills.web":"HTML, CSS, JavaScript, GitHub and web applications.","skills.data":"Annotation, transcription, alignment and data organization.",
@@ -52,6 +52,10 @@ function setLanguage(next) {
     if (value) el.textContent = value;
   });
   langButton.textContent = lang === "pt" ? "EN" : "PT";
+  document.querySelectorAll('a[download]').forEach(link => {
+    if (link.querySelector('[data-i18n="hero.download"]')) link.href = lang === "pt" ? "cv-petterson-pt.pdf" : "cv-petterson-en.pdf";
+    if (link.querySelector('[data-i18n="contact.cv"]')) link.href = lang === "pt" ? "cv-petterson-pt.pdf" : "cv-petterson-en.pdf";
+  });
   localStorage.setItem("petterson-lang", lang);
 }
 setLanguage(lang);
@@ -77,3 +81,20 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+const privateModal = document.getElementById("privateModal");
+const closePrivate = () => {
+  if (!privateModal) return;
+  privateModal.hidden = true;
+  privateModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+};
+document.querySelectorAll(".private-trigger").forEach(trigger => trigger.addEventListener("click", e => {
+  e.preventDefault();
+  privateModal.hidden = false;
+  privateModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}));
+document.querySelectorAll("[data-close-private]").forEach(el => el.addEventListener("click", closePrivate));
+document.addEventListener("keydown", e => { if (e.key === "Escape") closePrivate(); });

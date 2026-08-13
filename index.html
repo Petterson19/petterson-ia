@@ -29,7 +29,7 @@
         <span class="icon" data-icon="theme"></span>
       </button>
       <button class="lang-btn" id="langToggle" type="button">EN</button>
-      <a class="pill pill-small" href="https://privado.petterson.ia.br" data-i18n="private">Área pessoal</a>
+      <a class="pill pill-small" href="#" class="private-trigger" data-i18n="private">Área pessoal</a>
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -42,7 +42,7 @@
     <a href="#skills" data-i18n="nav.skills">Skills</a>
     <a href="#projects" data-i18n="nav.projects">Projetos</a>
     <a href="#contact" data-i18n="nav.contact">Contato</a>
-    <a href="https://privado.petterson.ia.br" data-i18n="private">Área pessoal</a>
+    <a href="#" class="private-trigger" data-i18n="private">Área pessoal</a>
   </div>
 
   <main>
@@ -54,13 +54,14 @@
         </div>
         <p class="kicker">TECH · AI · DATA · REMOTE</p>
         <h1 data-i18n="hero.title">Petterson<br><em>Cavalheiro.</em></h1>
-       <p class="hero-text" data-i18n="hero.subtitle">
-  Especialista em dados de IA, análise de dados e QA linguístico, com experiência em anotação de dados,
-  reconhecimento de fala, transcrição, alinhamento speech-to-text e avaliação de modelos de IA.
-</p>
-<div class="hero-credentials" aria-label="Experiência">
-  <span>RWS</span><i>·</i><span>TELUS</span><i>·</i><span>Amazon</span>
-</div>
+        <p class="hero-role" data-i18n="hero.role">AI Data Specialist · Data Analyst · Linguistic QA</p>
+        <p class="hero-text" data-i18n="hero.subtitle">
+          Especialista em dados de IA, análise de dados e QA linguístico, com experiência em anotação de dados,
+          speech-to-text, transcrição e avaliação de sistemas de IA.
+        </p>
+        <div class="hero-credentials" aria-label="Experiência profissional">
+          <span>RWS</span><i>·</i><span>TELUS</span><i>·</i><span>Amazon</span>
+        </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">
             <span data-i18n="hero.contact">Vamos conversar</span>
@@ -249,10 +250,22 @@
     </section>
   </main>
 
+  <div class="private-modal" id="privateModal" hidden aria-hidden="true">
+    <div class="private-backdrop" data-close-private></div>
+    <section class="private-dialog" role="dialog" aria-modal="true" aria-labelledby="privateTitle">
+      <button class="private-close" type="button" data-close-private aria-label="Fechar">×</button>
+      <span class="private-icon">LOCKED</span>
+      <p class="kicker">PRIVATE AREA</p>
+      <h2 id="privateTitle" data-i18n="private.title">Área pessoal em breve</h2>
+      <p data-i18n="private.text">A área privada está sendo preparada. O acesso a arquivos pessoais será liberado em uma próxima versão.</p>
+      <button class="btn btn-primary private-ok" type="button" data-close-private data-i18n="private.ok">Entendi</button>
+    </section>
+  </div>
+
   <footer class="site-footer section-shell">
     <span>© <span id="year"></span> Petterson Cavalheiro</span>
     <span>petterson<span class="accent">.ia.br</span></span>
-    <a href="https://privado.petterson.ia.br" data-i18n="footer.private">Área pessoal ↗</a>
+    <a href="#" class="private-trigger" data-i18n="footer.private">Área pessoal ↗</a>
   </footer>
 
   <script src="app.js"></script>

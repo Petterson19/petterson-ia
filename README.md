@@ -1,4 +1,4 @@
-# petterson.ia.br — versão frontend
+# petterson.ia.br — v5 · versão frontend
 
 Site pessoal/currículo bilíngue com foco em tecnologia, IA, dados e trabalho remoto.
 
